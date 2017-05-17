@@ -2,17 +2,19 @@
 	positioning
 }
 
-\tikzset{label/.style={
+\tikzset{
+label/.style={
 	midway,
 	sloped,
 	draw=none,
 	fill=white,
-	inner sep=0,
-	minimum height=.8em,
-	minimum width=.8em,
-}}
-\tikzset{label below/.style={label, below}}
-\tikzset{label above/.style={label, above}}
+	inner sep=1pt,
+	minimum height=0,
+	minimum width=0,
+},
+label below/.style={label, below},
+label above/.style={label, above},
+}
 \tikzset{default node/.style={
 	draw, 
 	circle,
