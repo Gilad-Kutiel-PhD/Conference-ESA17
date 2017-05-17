@@ -3,18 +3,25 @@
 }
 
 \tikzset{
-label/.style={
-	midway,
-	sloped,
-	draw=none,
-	fill=white,
-	inner sep=1pt,
-	minimum height=0,
-	minimum width=0,
-},
-label below/.style={label, below},
-label above/.style={label, above},
+	on/.code args={<#1>#2}{
+  		\only<#1>{\pgfkeysalso{#2}}
+	},
 }
+
+\tikzset{
+	label/.style={
+		midway,
+		sloped,
+		draw=none,
+		fill=white,
+		inner sep=1pt,
+		minimum height=0,
+		minimum width=0,
+	},
+	label below/.style={label, below},
+	label above/.style={label, above},
+}
+
 \tikzset{default node/.style={
 	draw, 
 	circle,
