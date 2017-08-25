@@ -1,0 +1,79 @@
+\begin{tikzpicture}[y=50mm, x=15mm, every node/.style={draw=none}, -]
+
+\draw (6,-5pt) -- (6,1.1) node[anchor=south]{Approximation Ratio};
+\draw (5,0) -- (11,0) node[anchor=west]{Year};
+
+\foreach \x in {6,...,10}{
+	\draw (\x, 1pt) -- (\x, -3pt) node[anchor=north]{\tiny \x};
+}
+
+\foreach \y in {0.25,.5,...,1}{
+	\draw (6, \y) -- +(1pt, 0) -- +(-3pt, 0) node[anchor=east]{\tiny \y};
+}
+
+\begin{filecontents}{data-upper.txt}
+7   0.996153846
+8   0.95
+8.8 0.91
+\end{filecontents}
+
+\begin{filecontents}{data-unweight.txt}
+7   0.6
+8   0.71
+9   0.804
+\end{filecontents}
+
+\begin{filecontents}{data-weight-vertex.txt}
+8   0.64
+9   0.64
+\end{filecontents}
+
+\begin{filecontents}{data-weight-edge.txt}
+7   0.5
+8   0.5
+9   0.5
+\end{filecontents}
+
+\begin{scope}[every node/.style={note=orange!50}, hide nodes]
+\def\pointer{callout absolute pointer}
+\node[on=<2>{show}, \pointer={(7,.5)}] at(7, .25)
+{\small Nguyen, C. Thach, et al. SODA 2007};
+
+\node[on=<3>{show}, \pointer={(8, .71)}] at(8, 1.3)
+{\small Chen, Ning, et al. APPROX 2007};
+
+\node[on=<4>{show}, \pointer={(8.8, .91)}] at(8.8, 1.3)
+{\small Deeparnab Chakrabarty et al. FOCS 2008};
+
+\node[on=<5>{show}, \pointer={(9, .804)}] at(9.5, .2)
+{\small Athanassopoulos, Stavros, et al. MFCS 2009};
+\end{scope}
+
+\tikzset{upper/.style={mark=*, mark options={fill=red}}}
+\tikzset{unweight/.style={mark=triangle*, mark options={fill=blue}}}
+\tikzset{weight-vertex/.style={mark=square*, mark options={fill=cyan}}}
+\tikzset{weight-edge/.style={mark=diamond*, mark options={fill=green}}}
+
+\draw plot[upper] file {data-upper.txt};
+\draw plot[unweight] file {data-unweight.txt};
+\draw plot[weight-vertex] file {data-weight-vertex.txt}; 
+\draw plot[weight-edge] file {data-weight-edge.txt};
+
+
+\draw 
+plot[upper] (10,1) -- +(-5pt,0) -- +(5pt,0) 
+node[right]{\tiny Hardness};
+
+\draw[yshift=-\baselineskip] 
+plot[unweight] (10,1) -- +(-5pt,0) -- +(5pt,0) 
+node[right]{\tiny Unweighted};
+
+\draw[yshift=-2\baselineskip] 
+plot[weight-vertex] (10,1) -- +(-5pt,0) -- +(5pt,0) 
+node[right]{\tiny Vertex Weighted};
+
+\draw[yshift=-3\baselineskip] 
+plot[weight-edge] (10,1) -- +(-5pt,0) -- +(5pt,0) 
+node[right]{\tiny Edge Weighted};
+
+\end{tikzpicture}

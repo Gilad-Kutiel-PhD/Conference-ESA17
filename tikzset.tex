@@ -1,5 +1,7 @@
 \usetikzlibrary{
 	positioning
+	,plotmarks
+	,shapes.callouts	
 }
 
 \tikzset{
@@ -9,6 +11,10 @@
 	alt/.code args={<#1>#2#3}{
   		\alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}}
 	},
+}
+
+\tikzset{
+	note/.style={rectangle callout, fill=#1}
 }
 
 \tikzset{
@@ -65,4 +71,10 @@
 	>=latex,
 	->,
 	every node/.style={default node},
+}
+
+\tikzset{
+	blur/.style={
+		black!15
+	}
 }

@@ -1,0 +1,53 @@
+\begin{tikzpicture}[
+every node/.append style={draw=none, font=\large}
+, x=1.3cm
+, y=1.2cm
+, thick
+]
+
+% PEOPLE
+\begin{scope}[on=<4->{every node/.append style={green}}]
+\node(p1) at(0,0) {\faFemale};
+\node(p2) at(1,2) {\faFemale};
+\node(p3) at(2,0) {\faFemale};
+\node(p5) at(4.5,-.5) {\faMale};
+\end{scope} 
+
+\begin{scope}[on=<4->{every node/.append style={red}}]
+\node(p4) at(3,-2) {\faMale};
+\node(p6) at(5,1) {\faMale};
+\end{scope}
+
+% VEHICLE
+\onslide<2-4>{
+\node[below=0 of p4] {\faTruck};
+\node[above=0 of p6] {\faCar};
+}
+
+\onslide<2-3>{
+\node[left=0 of p1] {\faCar};
+\node[above=0 of p2] {\faMotorcycle};
+\node[below=0 of p3] {\faCab};
+\node[below right=0 of p5] {\faMotorcycle};
+}
+
+\onslide<3->{
+\draw (p1) to[bend right] node[label below]{\2star} (p4);
+\draw (p2) to[bend left] node[label above]{\1star} (p6);
+\draw (p3) to[bend left] node[label above]{\3star} (p6);
+\draw (p5) to[bend right] node[label below]{\2star} (p6);
+}
+
+\onslide<3>{
+\draw (p1) to[bend left] node[label above]{\1star} (p2);
+\draw (p2) to[bend right] node[label below]{\3star} (p3);
+\draw (p3) to[bend left] node[label below]{\1star} (p1);
+\draw (p3) to[bend right] node[label above]{\1star} (p2);
+\draw (p3) to[bend left] node[label above]{\2star} (p4);
+\draw (p4) to[bend right] node[label below]{\1star} (p5);
+\draw (p6) to[bend left] node[label below]{\2star} (p3);
+}
+
+
+
+\end{tikzpicture}
