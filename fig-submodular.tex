@@ -10,7 +10,7 @@ every node/.append style={
 ]
 
 \def\group#1#2#3{
-\draw[#3, -]
+\draw[#3, -, name path=#1#2]
 (#1.west)
 to[out=90,in=90] (#2.east)
 to[out=-90,in=-90] (#1.west)
@@ -48,6 +48,19 @@ to[out=-90,in=-90] (#1.west)
 
 \node(26) at(2,0){\faFemale};
 \end{scope}
+
+\group{24}{25}{purple,dotted,thin}
+\group{25}{26}{cyan,dotted,thin}
+
+\draw[cyan,-, name intersections={of=2425 and 2526}]
+(intersection-1)
+to [out=210,in=150,looseness=1.40] (intersection-2)
+;
+
+\draw[purple,-, name intersections={of=2425 and 2526}]
+(intersection-1)
+to [out=-30,in=30,looseness=1.40] (intersection-2)
+;
 
 \draw[] (21) -- (25);
 \draw[orange] (24) -- (25);
