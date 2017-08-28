@@ -9,6 +9,14 @@ every node/.append style={
 , very thick
 ]
 
+\def\group#1#2#3{
+\draw[#3, -]
+(#1.west)
+to[out=90,in=90] (#2.east)
+to[out=-90,in=-90] (#1.west)
+;
+}
+
 % GROUP 1 
 \node(11) at(0,1){\faFemale};
 \node(12) at(1,1){\faFemale};
@@ -19,6 +27,9 @@ every node/.append style={
 \node(15) at(1,0){\faFemale};
 \node(16) at(2,0){\faFemale};
 \end{scope}
+
+\group{14}{15}{purple}
+\group{15}{16}{cyan}
 
 \draw[green] (11) -- (14);
 \draw (12) -- (15);
@@ -45,6 +56,27 @@ every node/.append style={
 
 % GROUP 3 
 \begin{scope}[xshift=7cm]
+\node(41) at(0,1){\faFemale};
+\node(42) at(1,1){\faFemale};
+\node(43) at(2,1){\faFemale};
+
+\begin{scope}[every node/.append style={brown}]
+\node(44) at(0,0){\faFemale};
+\node(45) at(1,0){\faFemale};
+\end{scope}
+
+\node(46) at(2,0){\faFemale};
+\end{scope}
+
+\group{44}{45}{purple}
+
+\draw[green] (41) -- (44);
+\draw (42) -- (45);
+\draw[green] (46) -- (45);
+
+
+% GROUP 4 
+\begin{scope}[xshift=7cm, yshift=-4cm]
 \node(31) at(0,1){\faFemale};
 \node(32) at(1,1){\faFemale};
 \node(33) at(2,1){\faFemale};
@@ -58,27 +90,11 @@ every node/.append style={
 
 \end{scope}
 
+\group{35}{36}{cyan}
+
 \draw (31) -- (35);
 \draw[orange] (34) -- (35);
 \draw[orange] (33) -- (36);
 
-
-% GROUP 4 
-\begin{scope}[xshift=7cm, yshift=-4cm]
-\node(41) at(0,1){\faFemale};
-\node(42) at(1,1){\faFemale};
-\node(43) at(2,1){\faFemale};
-
-\begin{scope}[every node/.append style={brown}]
-\node(44) at(0,0){\faFemale};
-\node(45) at(1,0){\faFemale};
-\end{scope}
-
-\node(46) at(2,0){\faFemale};
-\end{scope}
-
-\draw[green] (41) -- (44);
-\draw (42) -- (45);
-\draw[green] (46) -- (45);
 
 \end{tikzpicture}

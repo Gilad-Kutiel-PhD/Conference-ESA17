@@ -1,0 +1,27 @@
+\begin{tikzpicture}[very thick, every node/.append style={draw=none, font=\Large}]
+\foreach[count=\i] \x/\y in {%
+0/0, 1/2, 2/1%
+}{
+\node[red](\i) at(\x,\y){\faStar\i};
+}
+
+\foreach \i/\j in {%
+1/2,2/3%
+}{
+\draw[green,-] (\i) -- (\j);
+}
+
+\draw[blue, dashed, -]
+(1.south)
+to[out=180, in=180] (2.north)
+to[out=0, in=90] (3.east)
+to[out=-90, in=0] (1.south)
+;
+
+\foreach[count=\i] \l in {%
+2cm, 1cm, 0% 
+}{
+\node(bl\i) at(1)[below left=1.5cm and \l] {};
+\draw[green,-] (1) -- (bl\i);
+}
+\end{tikzpicture}

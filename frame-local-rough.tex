@@ -1,0 +1,25 @@
+\begin{frame}{Local Search - Rough Analysis}
+\begin{columns}
+\begin{column}{.6\textwidth}
+
+\begin{itemize}
+	\item Roughly, for large $K$
+	\item Each {\color{red}\faStar}:
+	\begin{itemize}
+	  \item contribute $\leq C_{max}$ to OPT
+	  \item has $\geq 1$ Good edge
+	  \item has $\leq C_{max} - 1$ Bad edges
+	\end{itemize}
+\end{itemize}
+\end{column}
+\begin{column}{.5\textwidth}
+\input{fig-local-search-rough}
+\end{column}
+\end{columns}
+\vfill
+$$
+\frac{1 + 1/2 (C_{max} - 1)}{C_{max}} 
+=
+\bm{\frac{1}{2} + \frac{1}{2 C_{max}}}
+$$
+\end{frame}
