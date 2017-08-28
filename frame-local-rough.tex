@@ -2,13 +2,13 @@
 \begin{columns}
 \begin{column}{.6\textwidth}
 
-\begin{itemize}
+\begin{itemize}[<+>]
 	\item Roughly, for large $K$
-	\item Each {\color{red}\faStar}:
+	\item<+-+(3)> Each {\color{red}\faStar}:
 	\begin{itemize}
-	  \item contribute $\leq C_{max}$ to OPT
-	  \item has $\geq 1$ Good edge
-	  \item has $\leq C_{max} - 1$ Bad edges
+	  \item contribute $\color{red} \leq |\text{\faTruck}|$ to OPT
+	  \item has $\color{green} \geq 1$ Good edge
+	  \item has $\color{green} \leq |\text{\faTruck}| - 1$ Bad edges
 	\end{itemize}
 \end{itemize}
 \end{column}
@@ -16,10 +16,12 @@
 \input{fig-local-search-rough}
 \end{column}
 \end{columns}
+
+\onslide<+>
 \vfill
 $$
-\frac{1 + 1/2 (C_{max} - 1)}{C_{max}} 
+\frac{\color{green} 1 + 1/2 (|\text{\faTruck}| - 1)}{\color{red} |\text{\faTruck}|} 
 =
-\bm{\frac{1}{2} + \frac{1}{2 C_{max}}}
+\bm{\frac{1}{2} + \frac{1}{2 |\text{\faTruck}|}}
 $$
 \end{frame}

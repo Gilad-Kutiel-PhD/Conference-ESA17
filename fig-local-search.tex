@@ -5,11 +5,12 @@ every node/.append style={draw=none, font=\Large}
 , very thick
 ]
 
+\onslide<+->
 % STARS
 \foreach[count=\i] \x/\y in {%
 0/0, 2/1, 1/2, 4/-1, 5/2, 7/0, 3/4, 4/5, 7/5, 8/3%
 }{
-\node[red](\i) at(\x,\y) {\faStar\i};
+\node[red](\i) at(\x,\y) {\faStar};
 }
 
 \foreach \i/\j in {%
@@ -18,6 +19,7 @@ every node/.append style={draw=none, font=\Large}
 \draw[green] (\i) -- (\j) coordinate[midway](\i\j);
 }
 
+\onslide<+->
 % COMPONENTS
 \draw[blue, dashed, thick] 
 (1.west) 
@@ -47,6 +49,8 @@ to[out=180,in=180] (9.north)
 to[out=0, in=0] coordinate[midway] (c4) (10.south)
 ;
 
+\onslide<+>
+% LOCAL OPTIMAL
 \begin{scope}[every node/.style={note=orange!50, font=\small}]
 \def\pointer{callout absolute pointer}
 
@@ -62,6 +66,7 @@ to[out=0, in=0] coordinate[midway] (c4) (10.south)
 \node[\pointer={(c4)}, above right=8mm and -5mm of c4] 
 {Local Optimal};
 
+\onslide<+->
 % EDGE TYPES
 \node[\pointer={(24)}, below left=8mm and 1mm of 24] {Bad};
 \node[\pointer={(46)}, below right=8mm and 1mm of 46] {Good};
