@@ -2,8 +2,10 @@
 \foreach[count=\i] \x/\y in {%
 0/0, 1/2, 2/1%
 }{
-\node[red](\i) at(\x,\y){\faStar\i};
+\node[red](\i) at(\x,\y){\faStar};
 }
+
+\node(4) at(1.5, -.5){};
 
 \foreach \i/\j in {%
 1/2,2/3%
@@ -11,11 +13,14 @@
 \draw[green,-] (\i) -- (\j);
 }
 
+\draw[green, dotted, -](3) -- (4);
+
 \draw[blue, dashed, -]
 (1.south)
 to[out=180, in=180] (2.north)
 to[out=0, in=90] (3.east)
-to[out=-90, in=0] (1.south)
+to[out=-90, in=45] (4.south east)
+to[out=215, in=0] (1.south)
 ;
 
 \foreach[count=\i] \l in {%
