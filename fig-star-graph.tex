@@ -5,7 +5,7 @@
 \foreach[count=\i] \x/\y in {%
 0/0, 2/1, 1/2, 2/-2, 3/-1, 1.5/-.5,4/1.5,5/0,4/-3,5/-1.5%
 }{
-\node(\i) at(\x,\y) {\large\faFemale};
+\node(\i) at(\x,\y) {\large\faFemale\i};
 }
 
 \onslide<+->
@@ -31,30 +31,30 @@
 \onslide<+->
 % OUTLINE
 \draw[blue, dashed, -] 
-(4.south)
-to [out=180,in=225] (6.north west)
-to [out=45,in=135] (5.north east)
-to [out=-45,in=0] (4.south)
+(1.south)
+to [out=180,in=180] (3.north)
+to [out=0,in=90] coordinate[midway](o1) (2.east)
+to [out=-90,in=0] (1.south)
 ;
 
 \draw[blue, dashed, -] 
-(1.south)
-to [out=180,in=180] (3.north)
-to [out=0,in=90] (2.east)
-to [out=-90,in=0] (1.south)
+(4.south)
+to [out=180,in=225] (6.north west)
+to [out=45,in=135] (5.north east)
+to [out=-45,in=0] (4.south) coordinate[below=1mm](o2)
 ;
 
 \draw[blue, dashed, -] 
 (10.south)
 to [out=180,in=180] (7.north)
-to [out=0,in=90] (8.east)
+to [out=0,in=90]coordinate[midway](o3) (8.east) 
 to [out=-90,in=0] (10.south)
 ;
 
 \draw[blue, dashed, -] 
 (9.south)
 to [out=180,in=180] (9.north)
-to [out=0,in=0] (9.south)
+to [out=0,in=0] (9.south) coordinate[below right=0 and 1mm](o4)
 ;
 
 \onslide<+->
@@ -63,7 +63,7 @@ to [out=0,in=0] (9.south)
 \foreach[count=\i] \x/\y in {%
 2/1, 2/-2,5/0,4/-3%
 }{
-\node[red](s\i) at(\x,\y) {\large\faStar};
+\node[red](s\i) at(\x,\y) {\large\faStar s\i};
 }
 \end{scope}
 
@@ -74,4 +74,16 @@ to [out=0,in=0] (9.south)
 \draw[green, -] (s\i) -- (s\j);
 }
 
+
+\onslide<+->
+% MAP
+\begin{scope}[orange, dotted]
+\draw (o1) to[bend left] (s1);
+\draw (o2) to[out=-60, in=240] (s2);
+\draw (o3) to[bend left] (s3);
+\draw (o4) to[bend right] (s4);
+\end{scope}
+
 \end{tikzpicture}
+
+
