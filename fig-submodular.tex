@@ -83,11 +83,6 @@ to [out=-30,in=30,looseness=1.40] (intersection-2)
 
 \group{44}{45}{purple}
 
-\draw[green] (41) -- (44);
-\draw (42) -- (45);
-\draw[green] (46) -- (45);
-
-
 % GROUP 4 
 \begin{scope}[xshift=7cm, yshift=-4cm]
 \node(31) at(0,1){\faFemale};
@@ -105,9 +100,17 @@ to [out=-30,in=30,looseness=1.40] (intersection-2)
 
 \group{35}{36}{cyan}
 
-\draw (31) -- (35);
+
+% ARCS
+\onslide<+->
+\onslide<+->
+\draw[green] (41) -- (44);
+\draw[green] (46) -- (45);
+\onslide<+->
 \draw[orange] (34) -- (35);
 \draw[orange] (33) -- (36);
-
+\onslide<+->
+\draw (42) -- (45);
+\draw (31) -- (35);
 
 \end{tikzpicture}
