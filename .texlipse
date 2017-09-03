@@ -1,5 +1,5 @@
 #TeXlipse project settings
-#Fri Aug 25 07:39:34 IDT 2017
+#Sun Sep 03 14:39:21 IDT 2017
 markTmpDer=true
 builderNum=2
 outputDir=out/
@@ -8,7 +8,7 @@ bibrefDir=
 outputFormat=pdf
 tempDir=tmp
 mainTexFile=main.tex
-outputFile=esa17.pdf
+outputFile=17-esa.pdf
 langSpell=en
 markDer=true
 srcDir=

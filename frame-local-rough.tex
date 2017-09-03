@@ -2,13 +2,13 @@
 \begin{columns}
 \begin{column}{.6\textwidth}
 
-\begin{itemize}[<+>]
+\begin{itemize}[<+->]
 	\item Roughly, for large $K$
-	\item<+-+(3)> Each {\color{red}\faStar}:
+	\item Each {\color{red}\faStar} intersects with:
 	\begin{itemize}
-	  \item contribute $\color{red} \leq |\text{\faTruck}|$ to OPT
-	  \item has $\color{green} \geq 1$ Good edge
-	  \item has $\color{green} \leq |\text{\faTruck}| - 1$ Bad edges
+% 	  \item contribute $\color{red} \leq |\text{\faTruck}|$ to OPT
+	  \item $\geq 1$ good edges
+	  \item $\geq |\text{\color{red}\faStar}| - 1$ bad edges
 	\end{itemize}
 \end{itemize}
 \end{column}
@@ -17,10 +17,12 @@
 \end{column}
 \end{columns}
 
-\onslide<+>
+\onslide<+->
 \vfill
 $$
-\frac{\color{green} 1 + 1/2 (|\text{\faTruck}| - 1)}{\color{red} |\text{\faTruck}|} 
+\frac{\color{green} 1 + 1/2 (|\text{\faStar}| - 1)}
+{\color{red} |\text{\faStar}|} 
+\onslide<+->
 =
 \bm{\frac{1}{2} + \frac{1}{2 |\text{\faTruck}|}}
 $$
