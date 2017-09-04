@@ -1,10 +1,10 @@
 \begin{tikzpicture}[
 every node/.append style={
-	draw=none, 
+	draw=none,
 	blue, 
 	font=\Large
 }
-, y=1.5cm
+, y=1.45cm
 , x=1.5cm
 , very thick
 ]
@@ -67,6 +67,13 @@ to [out=-30,in=30,looseness=1.40] (intersection-2)
 \draw[orange] (24) -- (25);
 \draw[green] (26) -- (25);
 
+% LABELS
+\begin{scope}[every node/.style={black, rectangle}]
+\node[above=0 of 12]{$F(A \cup B)$};
+\node[below=5mm of 25]{$F(A \cap B)$};
+\end{scope}
+
+
 \onslide<+->
 % GROUP 3 
 \begin{scope}[xshift=7cm]
@@ -101,6 +108,11 @@ to [out=-30,in=30,looseness=1.40] (intersection-2)
 
 \group{35}{36}{cyan}
 
+% LABELS
+\begin{scope}[every node/.style={black, rectangle}]
+\node[above=0 of 42]{$F(A)$};
+\node[below=5mm of 35]{$F(B)$};
+\end{scope}
 
 % ARCS
 \onslide<+->
